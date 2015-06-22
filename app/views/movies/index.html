@@ -1,0 +1,9 @@
+<player video="video" />
+
+<ul>
+    <li ng-repeat="movie in movies" ng-click="selected(movie)">
+        <img ng-src="{{ movie.images.cover }}"/>
+        <p>{{ movie.title }}</p>
+        <p>{{ movie.meta.releaseYear }}</p>
+    </li>
+</ul>
