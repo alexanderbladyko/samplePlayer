@@ -1,9 +1,26 @@
-<player video="video" />
 
-<ul>
-    <li ng-repeat="movie in movies" ng-click="selected(movie)">
-        <img ng-src="{{ movie.images.cover }}"/>
-        <p>{{ movie.title }}</p>
-        <p>{{ movie.meta.releaseYear }}</p>
-    </li>
-</ul>
+<div class="row">
+    <video-player ns-show="!!currentMovie" video="currentMovie"></video-player>
+
+    <div class="movie-description" ng-show="currentMovie">
+        <h2> {{ currentMovie.title }} ( {{ currentMovie.meta.releaseYear }} )</h2>
+
+        <span ng-show="currentMovie.meta.directors.length">
+            <ng-pluralize class="category" count="currentMovie.meta.directors.length"
+                          when="{ '1': 'Director:', 'other': 'Directors:' }"></ng-pluralize>
+            <address ng-repeat="director in currentMovie.meta.directors">{{ director.name }}</address>
+        </span>
+
+        <br />
+
+        <span ng-show="currentMovie.meta.actors.length">
+            <ng-pluralize class="category" count="currentMovie.meta.actors.length"
+                          when="{ '1': 'Actor:', 'other': 'Actors:' }">
+            </ng-pluralize>
+            <address ng-repeat="actor in currentMovie.meta.actors">{{ actor.name }}</address>
+        </span>
+
+    </div>
+</div>
+
+<video-list list="movies" on-selected="selected"></video-list>

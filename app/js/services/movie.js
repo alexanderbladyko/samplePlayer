@@ -5,7 +5,7 @@
 	app.service('Movie', ['$http', function($http) {
 		return {
 				get: function() {
-					return $http.get("/app/movies.json");
+					return $http.get("/app/data/movies.json");
 				}
 			};
 	}]);

@@ -1,30 +1,76 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body {
+  background-color: #f2f2f2;
 }
 
-.menu:before {
-  content: "[";
+.row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-.menu:after {
-  content: "]";
+.columns-4 {
+  position: relative;
+  float: left;
 }
 
-.menu > li {
-  display: inline;
+video {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.video-item {
+  margin: 0 auto;
+  max-width: 150px;
+  cursor: pointer;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.movie-description {
+  padding-left: 20px;
+}
+
+.movie-description .category {
+  float: left;
+}
+
+.movie-description address {
+  padding-left: 100px;
+}
+
+@media(max-width:767px) {
+  .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .columns-4 {
+    width: 50%;
+  }
+}
+
+@media(min-width:768px) {
+  .row {
+    max-width: 800px;
+  }
+
+  .columns-4 {
+    width: 25%;
+  }
+}
+
+@media(min-width:992px) {
+  .columns-4 {
+    width: 25%;
+  }
+}
+
+@media(min-width:1200px) {
+  .row {
+    max-width: 800px;
+  }
+
+  .columns-4 {
+    width: 25%;
+  }
 }
