@@ -7,7 +7,7 @@
 			template:
 				'<div class="row"> \
 					<div class="columns-4" ng-repeat="video in videos" ng-click="select(video)"> \
-						<div class="video-item">\
+						<div class="video-item" ng-class="{ selected: selectedVideo == video }">\
 							<img ng-src="{{ video.images.cover }}" /> \
 							<p> \
 								<cite>{{ video.title }}</cite> \
@@ -29,6 +29,7 @@
 				});
 
 				scope.select = function(video) {
+					scope.selectedVideo = video;
 					scope.onSelected(video);
 				};
 			}

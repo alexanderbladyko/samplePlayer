@@ -26,6 +26,18 @@ video {
   cursor: pointer;
 }
 
+.video-item img {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.video-item.selected img {
+  box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5);
+}
+
+.video-item img:hover {
+  box-shadow: 0 3px 10px rgba(0, 255, 0, 0.5);
+}
+
 .movie-description {
   padding-left: 20px;
 }
